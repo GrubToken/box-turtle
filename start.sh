@@ -11,11 +11,11 @@ read walletpassword
 
 
 create_new_wallet () {
-  ./scripts/turtle-service -g -w ./scripts/$walletname -p $walletpassword --rpc-password test --daemon-address $node --enable-cors "*"
+  ./scripts/GRUB-service -g -w ./scripts/$walletname -p $walletpassword --rpc-password test --daemon-address $node --enable-cors "*"
 }
 
 start_turtle_service () {
-  ./scripts/turtle-service -w ./scripts/$walletname -p $walletpassword --rpc-password test --daemon-address $node --enable-cors "*" &
+  ./scripts/GRUB-service -w ./scripts/$walletname -p $walletpassword --rpc-password test --daemon-address $node --enable-cors "*" &
 }
 
 start_box_turtle () {
@@ -24,10 +24,10 @@ start_box_turtle () {
 
 if [ -e "./scripts/${walletname}" ]
 then
-  start_turtle_service
+  start_GRUB_service
   start_box_turtle
 else
   create_new_wallet
-  start_turtle_service
+  start_GRUB_service
   start_box_turtle
 fi;
