@@ -1,5 +1,5 @@
 #!/bin/bash
-node=public.turtlenode.io
+node=192.99.206.62
 
 clear
 echo ""
